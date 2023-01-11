@@ -104,7 +104,7 @@ export default function Festival() {
         {festivalLoading && <LoadingSpinner />}
         {festivalData.items?.item?.map((data) => (
           <Link
-            to={`/detail/${data.contentid}`}
+            to={`detail/${data.contentid}`}
             key={`${data.contentid}`}
             state={{ contentId: data.contentid, eventstartdate: data.eventstartdate, eventenddate: data.eventenddate }}
             className={styles.itemWrapper}
