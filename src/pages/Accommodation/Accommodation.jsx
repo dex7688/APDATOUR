@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Accommodation.module.css';
 
-import { changeAreaCode, changeSigunguCode, changeDate } from '../../store/modules/searchInfo';
+import { changeAreaCode, changeSigunguCode } from '../../store/modules/searchInfo';
 import { fetchSigungu } from '../../store/modules/fetchSigungu';
 import { fetchAccommodation } from '../../store/modules/fetchAccommodation';
 import { useDispatch, useSelector } from 'react-redux';
@@ -12,7 +12,6 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import Paginator from '../../components/Paginator/Paginator';
 import LoadingSpinner from '../../components/LoadingSpinner.jsx/LoadingSpinner';
 import { changeInitState } from '../../store/modules/fetchDetailInfo';
 import AccommodationPaginator from '../../components/Paginator/AccommodationPaginator';

@@ -5,7 +5,7 @@ import { fetchFestival } from '../../store/modules/fetchFestival';
 import { FcNext, FcPrevious } from 'react-icons/fc';
 
 export default function FestivalPaginator({ totalCount, pageNo, date }) {
-  const { type, areaCode, sigunguCode, contentTypeCode } = useSelector((state) => state.searchInfo);
+  const { areaCode, sigunguCode } = useSelector((state) => state.searchInfo);
   const [pageIndex, setPageIndex] = useState(0);
   const dispatch = useDispatch();
 

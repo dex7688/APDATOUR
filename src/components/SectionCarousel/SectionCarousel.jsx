@@ -1,16 +1,14 @@
-import React, { useState, useRef } from "react";
-import styles from "./SectionCarousel.module.css";
-import { useNavigate } from "react-router-dom";
-import Carousel from "../../components/Carousel/Carousel";
-import SelectInput from "../../components/SelectInput/SelectInput";
-import { useSelector, useDispatch } from "react-redux";
-import { changeType } from "../../store/modules/searchInfo";
+import React, { useState, useRef } from 'react';
+import styles from './SectionCarousel.module.css';
+import { useNavigate } from 'react-router-dom';
+import Carousel from '../../components/Carousel/Carousel';
+import SelectInput from '../../components/SelectInput/SelectInput';
+import { useSelector, useDispatch } from 'react-redux';
+import { changeType } from '../../store/modules/searchInfo';
 
 export default function SectionCarousel() {
-  const [selected, setSelected] = useState("여행");
-  const { type, areaCode, sigunguCode } = useSelector(
-    (state) => state.searchInfo
-  );
+  const [selected, setSelected] = useState('여행');
+  const { sigunguCode } = useSelector((state) => state.searchInfo);
   const sectionRef = useRef();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -23,15 +21,15 @@ export default function SectionCarousel() {
 
   // button 클릭 시 페이지 이동하기 위한 router 주소 값 반환
   const getPageNation = () => {
-    if (selected === "여행") return "/travel";
-    if (selected === "축제") return "/festival";
-    if (selected === "숙박") return "/accommodation";
+    if (selected === '여행') return '/travel';
+    if (selected === '축제') return '/festival';
+    if (selected === '숙박') return '/accommodation';
   };
 
   // 알아보기 버튼 클릭 시 이동, 지역을 선택하지 않으면 alert 생성
   const handleButtonClick = () => {
-    if (sigunguCode === "") {
-      alert("지역을 선택해주세요");
+    if (sigunguCode === '') {
+      alert('지역을 선택해주세요');
     } else {
       navigate(getPageNation());
     }
@@ -51,9 +49,7 @@ export default function SectionCarousel() {
             <li
               key={el.name}
               onClick={handleOptionClick}
-              className={`${styles.option} ${
-                selected === el.name && styles.active
-              }`}
+              className={`${styles.option} ${selected === el.name && styles.active}`}
             >
               {el.name}
             </li>
@@ -75,7 +71,7 @@ export default function SectionCarousel() {
 }
 
 const typesInfo = [
-  { name: "여행", type: "areaBasedList" },
-  { name: "축제", type: "searchFestival" },
-  { name: "숙박", type: "searchStay" },
+  { name: '여행', type: 'areaBasedList' },
+  { name: '축제', type: 'searchFestival' },
+  { name: '숙박', type: 'searchStay' },
 ];

@@ -9,7 +9,7 @@ export default function SectionTourlist() {
   const [currentArea, setCurrentArea] = useState('1');
   const [areaCodes, setAreaCodes] = useState([]);
   const [slide, setSlide] = useState(4);
-  const [tourLists, loading] = useFetchByArea(currentArea);
+  const [tourLists] = useFetchByArea(currentArea);
 
   // areaCode(도시 코드,이름) fetch
   useEffect(() => {

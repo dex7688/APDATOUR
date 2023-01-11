@@ -17,7 +17,7 @@ export default function Modify() {
   }, []);
 
   async function fetchReview() {
-    const reviewRes = await fetch(`http://3.36.132.58:4500/review/${reviewNo}`);
+    const reviewRes = await fetch(`http://13.209.64.144:4500/review/${reviewNo}`);
     if (reviewRes.status === 200) {
       const data = await reviewRes.json();
       itemInput.current.value = data.item;
@@ -43,7 +43,7 @@ export default function Modify() {
     };
 
     if (modifyInfo.item !== '' && modifyInfo.title !== '' && modifyInfo.content) {
-      const postResponse = await fetch(`http://3.36.132.58:4500/review/modify/${reviewNo}`, {
+      const postResponse = await fetch(`http://13.209.64.144:4500/review/modify/${reviewNo}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -1,4 +1,3 @@
-import { faRegistered } from '@fortawesome/free-regular-svg-icons';
 import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './SignUp.module.css';
@@ -19,7 +18,7 @@ export default function SignUp() {
     };
 
     if (registerInfo.name !== '' && registerInfo.email !== '' && registerInfo.password !== '' && registerInfo.region) {
-      const registerResponse = await fetch('http://3.36.132.58:4500/register', {
+      const registerResponse = await fetch('http://13.209.64.144:4500/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

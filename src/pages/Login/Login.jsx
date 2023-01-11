@@ -20,7 +20,7 @@ export default function Login() {
       password: userPasswordInput.current.value,
     };
     if (loginInfo.email !== '' && loginInfo.password !== '') {
-      const loginResponse = await fetch('http://3.36.132.58:4500/login', {
+      const loginResponse = await fetch('http://13.209.64.144:4500/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,11 +75,10 @@ export default function Login() {
           <Link to='/signup'>
             <button className={styles.register_btn}>회원가입</button>
           </Link>
-          <a href={KAKAO_AUTH_URL}>
+          {/* <a href={KAKAO_AUTH_URL}>
             <div className={styles.kakao_btn}></div>
-          </a>
+          </a> */}
         </div>
-        <footer className={styles.footer}></footer>
       </div>
     </div>
   );

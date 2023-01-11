@@ -2,12 +2,10 @@ import React, { useState } from 'react';
 import styles from './SectionDistance.module.css';
 import useGeolocation from '../useGeolocation';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
-import { useNavigate } from 'react-router-dom';
 
 export default function SectionDistance() {
   const [slide, setSlide] = useState(0);
-  const [distanceData, loading, error] = useGeolocation();
-  const navigate = useNavigate();
+  const [distanceData, loading] = useGeolocation();
 
   const getCarouselStyle = () => {
     return {

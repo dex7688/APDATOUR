@@ -24,7 +24,7 @@ export default function Write() {
       email: userEmail,
     };
     if (postInfo.item !== '' && postInfo.title !== '' && postInfo.content) {
-      const postResponse = await fetch('http://3.36.132.58:4500/review/write', {
+      const postResponse = await fetch('http://13.209.64.144:4500/review/write', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

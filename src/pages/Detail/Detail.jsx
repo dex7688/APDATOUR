@@ -24,7 +24,7 @@ export default function Detail() {
   useEffect(() => {
     const fetchIsCheck = async () => {
       const loginInfo = { email: userEmail, contentId: state.contentId };
-      const loginResponse = await fetch('http://3.36.132.58:4500/addLike/isCheck', {
+      const loginResponse = await fetch('http://13.209.64.144:4500/addLike/isCheck', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ export default function Detail() {
 
   const fetchLike = async () => {
     const loginInfo = { email: userEmail, contentId: state.contentId };
-    const loginResponse = await fetch('http://3.36.132.58:4500/addLike', {
+    const loginResponse = await fetch('http://13.209.64.144:4500/addLike', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

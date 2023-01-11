@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './Festival.module.css';
 
 import { changeAreaCode, changeSigunguCode, changeDate } from '../../store/modules/searchInfo';
@@ -13,7 +13,6 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
-import Paginator from '../../components/Paginator/Paginator';
 import LoadingSpinner from '../../components/LoadingSpinner.jsx/LoadingSpinner';
 import { changeInitState } from '../../store/modules/fetchDetailInfo';
 import FestivalPaginator from '../../components/Paginator/FestivalPaginator';
