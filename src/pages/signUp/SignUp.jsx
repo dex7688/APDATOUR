@@ -18,7 +18,7 @@ export default function SignUp() {
     };
 
     if (registerInfo.name !== '' && registerInfo.email !== '' && registerInfo.password !== '' && registerInfo.region) {
-      const registerResponse = await fetch('http://13.209.64.144:4500/register', {
+      const registerResponse = await fetch('http://13.209.203.105:4500/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

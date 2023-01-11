@@ -14,7 +14,7 @@ export default function Review() {
   }, []);
 
   async function fetchAllReview() {
-    const reviewRes = await fetch('http://13.209.64.144:4500/review/getAll');
+    const reviewRes = await fetch('http://13.209.203.105:4500/review/getAll');
     if (reviewRes.status === 200) {
       const data = await reviewRes.json();
 
@@ -24,7 +24,7 @@ export default function Review() {
   const { reviewNo } = useParams();
   const [count, setCount] = useState(0);
   async function addCounts() {
-    const countRes = await fetch(`http://13.209.64.144:4500/review/addCounts/${reviewNo}`, {
+    const countRes = await fetch(`http://13.209.203.105:4500/review/addCounts/${reviewNo}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

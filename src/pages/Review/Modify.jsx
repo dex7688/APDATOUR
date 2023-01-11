@@ -17,7 +17,7 @@ export default function Modify() {
   }, []);
 
   async function fetchReview() {
-    const reviewRes = await fetch(`http://13.209.64.144:4500/review/${reviewNo}`);
+    const reviewRes = await fetch(`http://13.209.203.105:4500/review/${reviewNo}`);
     if (reviewRes.status === 200) {
       const data = await reviewRes.json();
       itemInput.current.value = data.item;

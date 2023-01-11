@@ -6,7 +6,7 @@ import { login } from '../../store/modules/users';
 
 export default function Login() {
   const KAKAO_CLIENT_ID = '71fc8b830aac0622e9954140782b4cf4';
-  const KAKAO_REDIRECT_URI = 'http://3.36.132.58:3000/oauth/callback/kakao';
+  const KAKAO_REDIRECT_URI = 'http://13.209.203.105:3000/oauth/callback/kakao';
   const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code`;
 
   const userEmailInput = useRef();
