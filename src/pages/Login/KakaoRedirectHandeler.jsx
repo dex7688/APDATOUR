@@ -14,7 +14,7 @@ export default function KakaoRedirectHandeler() {
     // searchParams 물음표뒤의 값들을 불러옴
     const GRANT_TYPE = 'authorization_code';
     const KAKAO_CLIENT_ID = '71fc8b830aac0622e9954140782b4cf4';
-    const KAKAO_REDIRECT_URI = 'http://localhost:3000/oauth/callback/kakao';
+    const KAKAO_REDIRECT_URI = 'http://3.36.132.58:3000/oauth/callback/kakao';
 
     console.log('카카오 코드', CODE);
 
