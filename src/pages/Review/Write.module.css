@@ -1,0 +1,133 @@
+.container {
+  width: 100%;
+  height: 100%;
+  padding: var(--padding-layout);
+  color: var(--color-text);
+  background-color: white;
+  position: relative;
+  align-items: center;
+  font-weight: 700;
+  font-family: "Cafe24Simplehae";
+}
+
+/* 작성페이지 */
+.write_box {
+  width: 90%;
+  height: auto;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+
+  margin: 30px auto;
+}
+
+.title_box {
+  display: flex;
+  height: 80px;
+  align-items: center;
+  padding-left: 20px;
+  background-color: #ffc72c;
+}
+
+.h3 {
+  align-items: bottom;
+}
+
+/* 여행상품 */
+.item_box {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  border-bottom: solid 1px;
+  align-items: center;
+}
+
+.item_name {
+  width: 200px;
+  text-align: center;
+}
+
+.item_tourli {
+}
+
+.tourli {
+  margin-left: 20px;
+  width: 120px;
+  height: 40px;
+  font-size: 1rem;
+}
+
+/* 제목 */
+.content_box {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  border-bottom: solid 1px;
+  align-items: center;
+  display: flex;
+}
+
+.content_name {
+  width: 200px;
+  text-align: center;
+}
+
+.content_input {
+  width: 80%;
+}
+
+.content_box input {
+  margin-left: 20px;
+  width: 90%;
+  height: 40px;
+}
+
+/* 내용 */
+.review_box {
+  display: flex;
+  width: 100%;
+  height: 800px;
+  border-bottom: solid 1px;
+  align-items: center;
+  display: flex;
+}
+
+.review_name {
+  width: 200px;
+  text-align: center;
+}
+
+.review_input {
+  margin-top: 25px;
+  margin-left: 20px;
+  width: 80%;
+  height: 800px;
+}
+
+/* 버튼 */
+.btn_box {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  border-bottom: solid 1px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.btn_push {
+  width: 100px;
+  height: 50px;
+  background-color: #ffc72c;
+  font-weight: 700;
+  color: #fff;
+}
+
+.btn_cancel {
+  width: 100px;
+  height: 50px;
+  background-color: darkgray;
+  color: #fff;
+  margin-left: 10px;
+  font-weight: 700;
+}

@@ -1,0 +1,45 @@
+.pagination {
+  display: flex;
+  gap: 10px;
+}
+
+.current {
+  color: white;
+  font-weight: 600;
+  background-color: #23adad;
+}
+
+.pageNumber {
+  width: 26px;
+  height: 26px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageNumber:hover {
+  color: white;
+  font-weight: 600;
+  background-color: #23adad;
+}
+
+.iconWrapper {
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #23adad !important;
+}
+
+.icons {
+  cursor: pointer;
+  color: #23adad !important;
+  stroke: #23adad !important;
+  fill: #23adad !important;
+  font-size: 18px;
+}

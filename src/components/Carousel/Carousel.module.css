@@ -1,0 +1,57 @@
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.carouselItem {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-image 0.4s ease-out;
+}
+
+.text {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  line-height: 1.6;
+}
+
+.iconWrapper {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  border-radius: 15px;
+}
+
+.next {
+  display: block;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev {
+  display: block;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons {
+  font-size: 1.6rem;
+  cursor: pointer;
+}

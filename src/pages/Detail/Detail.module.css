@@ -1,0 +1,266 @@
+.container {
+  position: relative;
+  width: 100%;
+  padding: var(--padding-layout);
+  color: var(--color-text);
+}
+.sectionTitle {
+  width: 80%;
+  font-size: 1.8rem;
+  padding: 4px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.detailWrapper {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.imageWrapper {
+  width: 80%;
+  height: 600px;
+  overflow: hidden;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px rgb(0 0 0 / 10%);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.timeLine {
+  position: relative;
+  width: 80%;
+  margin-left: 30px;
+  padding-left: 64px;
+}
+
+.timeLine::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #c9c9c9;
+}
+
+.timeLineContainer {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.timeLineContainer:last-child {
+  margin-bottom: 0;
+}
+
+.timeLineicons {
+  position: absolute;
+  left: -88px;
+  top: 4px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: #1d8cf8;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoIcons {
+  color: white;
+}
+
+.timeLinebody {
+  border-radius: 3px;
+  padding: 20px 20px 15px;
+  border: 1px solid #c9c9c9;
+  box-shadow: 1px 3px 9px rgb(0 0 0 / 10%);
+}
+
+.timeLinebody::before {
+  content: '';
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  left: -10px;
+  transform: rotate(45deg);
+  border: 1px solid #c9c9c9;
+  border-top: 0;
+  border-right: 0;
+
+  border-radius: 0 0 0 2px;
+}
+
+.timeLineTitle {
+  padding: 4px 8px;
+  margin-bottom: 18px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: black;
+}
+
+.timeLineOverview {
+  font-size: 1.1rem;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  color: black;
+  padding: 4px 8px;
+}
+
+.timeLineMapbody {
+  border-radius: 3px;
+  padding: 20px 20px 15px;
+  border: 1px solid #c9c9c9;
+  box-shadow: 1px 3px 9px rgb(0 0 0 / 10%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeLineMapbody::before {
+  content: '';
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  left: -10px;
+  transform: rotate(45deg);
+  border: 1px solid #c9c9c9;
+  border-top: 0;
+  border-right: 0;
+  border-radius: 0 0 0 2px;
+}
+
+.timeLineMapTitle {
+  padding: 4px 8px;
+  margin-bottom: 18px;
+  border-radius: 3px;
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: black;
+  align-self: start;
+  margin-left: 17px;
+}
+
+.addrWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 10px;
+}
+
+.kakaoWrapper {
+  padding: 0 8px;
+}
+
+.addrText {
+  padding: 0 8px;
+}
+
+.addr {
+  font-size: 1.1rem;
+  color: black;
+}
+
+.homepage {
+  color: black;
+  width: 300px;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+a {
+  display: block;
+  margin-top: 3px;
+  font-size: 1.1rem;
+  color: black;
+}
+
+.timeLineMapContainer {
+  position: relative;
+  width: 400px;
+  margin-bottom: 40px;
+}
+
+.timeLineiconsMap {
+  position: absolute;
+  left: -88px;
+  top: 4px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: #fd5d93;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeLineLikeContainer {
+  position: relative;
+  width: 100px;
+  margin-bottom: 40px;
+}
+
+.timeLineLikebody {
+  border-radius: 3px;
+  padding: 20px 20px 15px;
+  border: 1px solid #c9c9c9;
+  box-shadow: 1px 3px 9px rgb(0 0 0 / 10%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.timeLineLikebody::before {
+  content: '';
+  background-color: white;
+  width: 20px;
+  height: 20px;
+  display: block;
+  position: absolute;
+  left: -10px;
+  top: 15px;
+  transform: rotate(45deg);
+  border: 1px solid #c9c9c9;
+  border-top: 0;
+  border-right: 0;
+  border-radius: 0 0 0 2px;
+}
+
+.timeLineiconsLike {
+  position: absolute;
+  left: -88px;
+  top: 4px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.5rem;
+  background-color: #ff8d72;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeLineLikebtn {
+  cursor: pointer;
+}

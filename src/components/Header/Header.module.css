@@ -1,0 +1,60 @@
+.header {
+  top: 0;
+  width: 100%;
+  height: 80px;
+  padding: var(--padding-layout);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.logo {
+}
+
+.logoText {
+  color: var(--color-text);
+  font-family: 'PuradakGentleGothicR';
+  /* font-family: 'yg-jalnan'; */
+  /* font-family: 'SaenggeoJincheon'; */
+  /* font-family: 'GangwonEduPowerExtraBoldA'; */
+  /* font-family: 'MaplestoryOTFBold'; */
+}
+
+.navList {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navItem {
+  font-size: 1.2rem;
+  color: var(--color-text);
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  display: block;
+  padding: 1vw 1vw 1vw;
+  position: relative;
+  font-family: 'MaplestoryOTFBold';
+}
+
+.navItem::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+}
+
+.navItem::after {
+  width: 0;
+  height: 0.2vw;
+  background: black;
+  left: 50%;
+}
+
+.navItem:hover::after {
+  width: 100%;
+  left: 0;
+  transition: all 0.3s;
+}

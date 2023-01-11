@@ -1,0 +1,71 @@
+.container {
+  width: 100%;
+  height: 800px;
+  padding: var(--padding-layout);
+  color: var(--color-text);
+  background-color: white;
+  display: flex;
+  position: relative;
+  align-items: center;
+  font-family: "Cafe24Simplehae";
+}
+
+.signup_box {
+  box-sizing: border-box;
+  display: block;
+  align-items: center;
+  width: 500px;
+  height: 750px;
+  position: relative;
+  left: 50%;
+  top: 20%;
+  margin-left: -250px;
+  margin-top: -300px;
+  /* border: 1px solid; */
+}
+
+.signUp_text {
+  width: 100%;
+  height: 80px;
+  text-align: center;
+  font-size: 1rem;
+  padding-top: 30px;
+}
+
+.signup_input {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.signup_boxtext {
+  margin-left: 10px;
+  margin-top: 30px;
+}
+.signup_box1 {
+  width: 100%;
+  height: 40px;
+  font-size: 1rem;
+  margin-top: 20px;
+  padding-left: 5px;
+}
+
+.tourli {
+  width: 200px;
+  padding: 0.8em 0.5em;
+  margin-top: 20px;
+  border: 1px solid #999;
+  font-family: inherit;
+  background: no-repeat 95% 50%;
+  border-radius: 0px;
+  overflow: auto;
+}
+
+.signup_btn {
+  margin-top: 60px;
+  margin-left: 33%;
+  width: 200px;
+  height: 50px;
+  background-color: midnightblue;
+  color: #fff;
+  font-size: 1rem;
+}

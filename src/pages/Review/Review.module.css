@@ -1,0 +1,249 @@
+* {
+  font-family: "Cafe24Simplehae";
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+.wrap {
+  position: relative;
+  padding-top: 50px;
+  min-width: 500px;
+  min-height: 500px;
+  margin: 0 auto;
+  padding: 20px 80px;
+}
+.title {
+  padding-bottom: 10px;
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  border-bottom: 2px solid #777;
+  margin: 40px 0;
+}
+.title2 {
+  font-size: 18px;
+  height: 40px;
+  text-align: center;
+  font-weight: 700;
+  border-bottom: 2px solid black;
+  display: flex;
+}
+
+.item_box {
+  width: 10%;
+  margin-top: -10px;
+}
+
+.title_box {
+  width: 45%;
+  margin-top: -10px;
+}
+
+.author_box {
+  width: 15%;
+  margin-top: -10px;
+}
+
+.registerTime_box {
+  width: 20%;
+  margin-top: -10px;
+}
+
+.counts_box {
+  width: 10%;
+  margin-top: -10px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+table {
+  margin: 0 auto;
+  border-spacing: 0;
+  border-top: 2px solid #333;
+  width: 100%;
+}
+
+.listClick:hover {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+table th {
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: top;
+  border-bottom: 1px solid #e1e1e1;
+  background-color: #ffc72c;
+}
+table thead tr:hover {
+  background-color: none;
+}
+table tbody tr:hover {
+  background-color: lavender;
+}
+table td {
+  height: 50px;
+  text-align: center;
+  border-bottom: 1px solid #e1e1e1;
+}
+table tr td:nth-child(2) {
+  text-align: center;
+}
+/* ReviewDetail */
+.content {
+  height: auto;
+  padding: 30px;
+}
+/* .like {
+  border: 1px solid black;
+  width: 250px;
+  border-radius: 20px;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+} */
+/* ReviewWrite */
+.title_inputbox {
+  width: 780px;
+  height: 30px;
+}
+.content_inputbox {
+  width: 780px;
+  height: 300px;
+  margin: 10px 0;
+}
+.btn {
+  background-color: gray;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  line-height: 40px;
+  width: 150px;
+  margin: 10px auto;
+  color: #fff;
+}
+.btn:hover {
+  background-color: darkgray;
+}
+
+.btn_box {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  top: 90%;
+}
+
+.like_box {
+  position: relative;
+  text-align: center;
+  width: 500px;
+  height: 50px;
+  top: 50px;
+  left: 30%;
+  margin-left: 0 auto;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.like_text {
+  margin-top: 10px;
+}
+
+.like_btn {
+  margin-left: 10px;
+  font-size: 20px;
+  align-items: center;
+}
+/* 수정,삭제 버튼 */
+.write_btnbox {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding-bottom: 30px;
+  border-bottom: 2px solid black;
+}
+.write_modify {
+  background-color: orange;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  line-height: 40px;
+  width: 150px;
+}
+
+.write_delete {
+  background-color: orange;
+  cursor: pointer;
+  display: block;
+  font-size: 18px;
+  line-height: 40px;
+  width: 150px;
+  margin-left: 10px;
+}
+
+/* 댓글 보여주기 */
+
+.comment_box {
+  display: flex;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  margin: 0 auto;
+  border-bottom: 1px solid black;
+}
+
+.comment_writer {
+  width: 20%;
+  height: 50px;
+}
+
+.comment_write {
+  width: 60%;
+  height: 50px;
+}
+
+.comment_date {
+  width: 20%;
+  height: 50px;
+}
+
+.comment_delete {
+  font-size: 1rem;
+  color: red;
+}
+
+.comment_delete:hover {
+  cursor: pointer;
+}
+
+/* 댓글 입력하기 */
+.comment_write_box {
+  display: flex;
+  width: 100%;
+  height: auto;
+  padding: 30px;
+  border-bottom: 1px solid black;
+}
+
+.comment_write_box input {
+  margin-top: -10px;
+  margin-left: 40px;
+  width: 80%;
+  height: 40px;
+}
+
+.comment_push {
+  margin-top: -10px;
+  margin-left: 10px;
+  width: 100px;
+  height: 40px;
+  background-color: orange;
+  color: #fff;
+}

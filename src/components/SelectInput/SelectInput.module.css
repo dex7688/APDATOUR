@@ -1,0 +1,104 @@
+.selectInputWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.selectInput {
+  height: 52px;
+  width: 100%;
+  font-size: 1.1rem;
+  padding: 0 15px;
+  outline: none;
+  border: 1px solid #303030;
+  border-radius: 6px;
+}
+
+.areaWrapper {
+  position: absolute;
+  padding: 20px 30px;
+  top: 60px;
+  width: 500px;
+  height: 500px;
+  background-color: #fff;
+  border: 1px solid black;
+  z-index: 10;
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  align-items: start;
+}
+
+.textWrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.text {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.listWrapper {
+  display: flex;
+  width: 100%;
+  height: 90%;
+  border: 1px solid #c6c6c6;
+  border-radius: 5px;
+  background-color: #dadde2;
+}
+
+.areaList {
+  min-width: 120px;
+  text-align: center;
+  cursor: pointer;
+  overflow-y: auto;
+}
+
+.area {
+  font-size: 1.2rem;
+  padding: 15px 18px;
+  cursor: pointer;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+.area.active {
+  color: #faf8ff;
+  background-color: #666666;
+}
+
+.area:hover {
+  color: #faf8ff;
+  background-color: #666666;
+}
+
+.sigunguList {
+  position: relative;
+  width: 100%;
+  font-size: 1.1rem;
+  overflow-y: auto;
+}
+
+.sigungu {
+  width: 50%;
+  float: left;
+  padding: 15px 18px;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.2s ease-out, background-color 0.2s ease-out;
+}
+
+.sigungu:hover {
+  color: #faf8ff;
+  background-color: #666666;
+}
+
+.sigungu.active {
+  color: #faf8ff;
+  background-color: #666666;
+}
+
+.close {
+  cursor: pointer;
+}
