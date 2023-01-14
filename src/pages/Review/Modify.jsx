@@ -11,7 +11,7 @@ export default function Modify() {
   let textareaInput = '';
   const navigate = useNavigate();
   const [content, setContent] = useState('');
-  const HTTPS = 'https://dmn6eoed23m8g.cloudfront.net';
+  const HTTPS = 'https://d1ueckheknv5b1.cloudfront.net';
 
   useEffect(() => {
     fetchReview();

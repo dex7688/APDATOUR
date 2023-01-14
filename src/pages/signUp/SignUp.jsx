@@ -8,7 +8,7 @@ export default function SignUp() {
   const passwordInput = useRef();
   const regionInput = useRef();
   const navigate = useNavigate();
-  const HTTPS = 'https://dmn6eoed23m8g.cloudfront.net';
+  const HTTPS = 'https://d1ueckheknv5b1.cloudfront.net';
 
   async function register() {
     const registerInfo = {
