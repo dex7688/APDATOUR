@@ -15,9 +15,10 @@ export default function ReviewDetail() {
   const userEmail = useSelector((state) => state.user.userEmail);
   const isLogin = useSelector((state) => state.user.isLogin);
   const navigate = useNavigate();
+  const HTTPS = 'https://dmn6eoed23m8g.cloudfront.net';
 
   const deleteComment = async (author, comment) => {
-    const deleteCommentResponse = await fetch(`http://13.209.203.105:4500/review/comment/delete/${reviewNo}`, {
+    const deleteCommentResponse = await fetch(`${HTTPS}/review/comment/delete/${reviewNo}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +38,7 @@ export default function ReviewDetail() {
   };
 
   const postCommnet = async () => {
-    const addCommentResponse = await fetch(`http://13.209.203.105:4500/review/comment/add/${reviewNo}`, {
+    const addCommentResponse = await fetch(`${HTTPS}/review/comment/add/${reviewNo}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -59,7 +60,7 @@ export default function ReviewDetail() {
   };
 
   async function fetchReview() {
-    const reviewRes = await fetch(`http://13.209.203.105:4500/review/${reviewNo}`);
+    const reviewRes = await fetch(`${HTTPS}/review/${reviewNo}`);
     if (reviewRes.status === 200) {
       const data = await reviewRes.json();
       setReview(data);
@@ -67,7 +68,7 @@ export default function ReviewDetail() {
     }
   }
   async function addLike() {
-    const likeRes = await fetch(`http://13.209.203.105:4500/review/addLike/${reviewNo}`, {
+    const likeRes = await fetch(`${HTTPS}/review/addLike/${reviewNo}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -83,7 +84,7 @@ export default function ReviewDetail() {
     }
   }
   async function addCount() {
-    const countRes = await fetch(`http://13.209.203.105:4500/review/addCount/${reviewNo}`, {
+    const countRes = await fetch(`${HTTPS}/review/addCount/${reviewNo}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -98,7 +99,7 @@ export default function ReviewDetail() {
   }
 
   const deleteReview = async () => {
-    const deleteReviewResponse = await fetch(`http://13.209.203.105:4500/review/delete/${reviewNo}`, {
+    const deleteReviewResponse = await fetch(`${HTTPS}/review/delete/${reviewNo}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

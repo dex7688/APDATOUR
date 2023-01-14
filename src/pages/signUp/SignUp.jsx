@@ -8,6 +8,7 @@ export default function SignUp() {
   const passwordInput = useRef();
   const regionInput = useRef();
   const navigate = useNavigate();
+  const HTTPS = 'https://dmn6eoed23m8g.cloudfront.net';
 
   async function register() {
     const registerInfo = {
@@ -18,7 +19,7 @@ export default function SignUp() {
     };
 
     if (registerInfo.name !== '' && registerInfo.email !== '' && registerInfo.password !== '' && registerInfo.region) {
-      const registerResponse = await fetch('http://13.209.203.105:4500/register', {
+      const registerResponse = await fetch(`${HTTPS}/register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

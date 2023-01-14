@@ -8,6 +8,7 @@ export default function Login() {
   const KAKAO_CLIENT_ID = '71fc8b830aac0622e9954140782b4cf4';
   const KAKAO_REDIRECT_URI = 'http://13.209.203.105:3000/oauth/callback/kakao';
   const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code`;
+  const HTTPS = 'https://dmn6eoed23m8g.cloudfront.net';
 
   const userEmailInput = useRef();
   const userPasswordInput = useRef();
@@ -20,7 +21,7 @@ export default function Login() {
       password: userPasswordInput.current.value,
     };
     if (loginInfo.email !== '' && loginInfo.password !== '') {
-      const loginResponse = await fetch('http://13.209.203.105:4500/login', {
+      const loginResponse = await fetch(`${HTTPS}/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

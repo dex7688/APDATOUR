@@ -8,6 +8,8 @@ import LoadingSpinner from '../../components/LoadingSpinner.jsx/LoadingSpinner';
 import { TfiBook, TfiLocationPin, TfiThumbUp } from 'react-icons/tfi';
 
 export default function Detail() {
+  const HTTPS = 'https://dmn6eoed23m8g.cloudfront.net';
+
   const { infoData, infoLoading } = useSelector((state) => state.fetchDetailInfo);
   const { userEmail } = useSelector((state) => state.user);
   const { isLogin } = useSelector((state) => state.user);
@@ -24,7 +26,7 @@ export default function Detail() {
   useEffect(() => {
     const fetchIsCheck = async () => {
       const loginInfo = { email: userEmail, contentId: state.contentId };
-      const loginResponse = await fetch('http://13.209.203.105:4500/addLike/isCheck', {
+      const loginResponse = await fetch(`${HTTPS}/addLike/isCheck`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +48,7 @@ export default function Detail() {
 
   const fetchLike = async () => {
     const loginInfo = { email: userEmail, contentId: state.contentId };
-    const loginResponse = await fetch('http://13.209.64.144:4500/addLike', {
+    const loginResponse = await fetch(`${HTTPS}/addLike`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

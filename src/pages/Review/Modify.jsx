@@ -11,13 +11,14 @@ export default function Modify() {
   let textareaInput = '';
   const navigate = useNavigate();
   const [content, setContent] = useState('');
+  const HTTPS = 'https://dmn6eoed23m8g.cloudfront.net';
 
   useEffect(() => {
     fetchReview();
   }, []);
 
   async function fetchReview() {
-    const reviewRes = await fetch(`http://13.209.203.105:4500/review/${reviewNo}`);
+    const reviewRes = await fetch(`${HTTPS}/review/${reviewNo}`);
     if (reviewRes.status === 200) {
       const data = await reviewRes.json();
       itemInput.current.value = data.item;
@@ -43,7 +44,7 @@ export default function Modify() {
     };
 
     if (modifyInfo.item !== '' && modifyInfo.title !== '' && modifyInfo.content) {
-      const postResponse = await fetch(`http://13.209.64.144:4500/review/modify/${reviewNo}`, {
+      const postResponse = await fetch(`${HTTPS}/review/modify/${reviewNo}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

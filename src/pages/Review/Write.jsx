@@ -11,6 +11,7 @@ export default function Write() {
   const navigate = useNavigate();
 
   const userEmail = useSelector((state) => state.user.userEmail);
+  const HTTPS = 'https://dmn6eoed23m8g.cloudfront.net';
 
   function onEditorChange(value) {
     textareaInput = value;
@@ -24,7 +25,7 @@ export default function Write() {
       email: userEmail,
     };
     if (postInfo.item !== '' && postInfo.title !== '' && postInfo.content) {
-      const postResponse = await fetch('http://13.209.203.105:4500/review/write', {
+      const postResponse = await fetch(`${HTTPS}/review/write`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
