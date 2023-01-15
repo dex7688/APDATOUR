@@ -8,7 +8,7 @@ import LoadingSpinner from '../../components/LoadingSpinner.jsx/LoadingSpinner';
 import { TfiBook, TfiLocationPin, TfiThumbUp } from 'react-icons/tfi';
 
 export default function Detail() {
-  const HTTPS = 'https://d1ueckheknv5b1.cloudfront.net';
+  const HTTPS = 'https://deiidhdd11t1n.cloudfront.net';
 
   const { infoData, infoLoading } = useSelector((state) => state.fetchDetailInfo);
   const { userEmail } = useSelector((state) => state.user);

@@ -15,7 +15,7 @@ export default function ReviewDetail() {
   const userEmail = useSelector((state) => state.user.userEmail);
   const isLogin = useSelector((state) => state.user.isLogin);
   const navigate = useNavigate();
-  const HTTPS = 'https://d1ueckheknv5b1.cloudfront.net';
+  const HTTPS = 'https://deiidhdd11t1n.cloudfront.net';
 
   const deleteComment = async (author, comment) => {
     const deleteCommentResponse = await fetch(`${HTTPS}/review/comment/delete/${reviewNo}`, {
