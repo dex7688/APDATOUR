@@ -8,7 +8,7 @@ export default function SignUp() {
   const passwordInput = useRef();
   const regionInput = useRef();
   const navigate = useNavigate();
-  const HTTPS = 'https://deiidhdd11t1n.cloudfront.net';
+  const HTTPS = 'https://api.tourapda.com';
 
   async function register() {
     const registerInfo = {

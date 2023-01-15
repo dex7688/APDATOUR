@@ -11,7 +11,7 @@ export default function Write() {
   const navigate = useNavigate();
 
   const userEmail = useSelector((state) => state.user.userEmail);
-  const HTTPS = 'https://deiidhdd11t1n.cloudfront.net';
+  const HTTPS = 'https://api.tourapda.com';
 
   function onEditorChange(value) {
     textareaInput = value;

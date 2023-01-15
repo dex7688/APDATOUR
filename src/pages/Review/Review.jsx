@@ -8,7 +8,7 @@ export default function Review() {
   const navigate = useNavigate();
 
   const isLogin = useSelector((state) => state.user.isLogin);
-  const HTTPS = 'https://deiidhdd11t1n.cloudfront.net';
+  const HTTPS = 'https://api.tourapda.com';
 
   useEffect(() => {
     fetchAllReview();
