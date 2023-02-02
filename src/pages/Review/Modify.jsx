@@ -11,7 +11,10 @@ export default function Modify() {
   let textareaInput = '';
   const navigate = useNavigate();
   const [content, setContent] = useState('');
-  const HTTPS = 'https://api.tourapda.com';
+  // HTTPS
+  // const HTTPS = 'https://api.tourapda.com';
+  // LOCAL
+  const HTTPS = 'http://localhost:4500'
 
   useEffect(() => {
     fetchReview();

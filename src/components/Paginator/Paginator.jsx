@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import styles from './Paginator.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchTourList } from '../../store/modules/fetchTourList';
 import { FcNext, FcPrevious } from 'react-icons/fc';
+import { useLocation } from 'react-router-dom';
 
-export default function Paginator({ totalCount, pageNo }) {
-  const { areaCode, sigunguCode, contentTypeCode } = useSelector((state) => state.searchInfo);
+export default function Paginator({ totalCount, pageNo, setPage }) {
   const [pageIndex, setPageIndex] = useState(0);
-  const dispatch = useDispatch();
 
   // 필요한 총 페이지 수
   const numOfPages = Math.ceil(Number(totalCount) / 8);
@@ -31,7 +28,9 @@ export default function Paginator({ totalCount, pageNo }) {
   };
 
   const handleClick = (el) => {
-    dispatch(fetchTourList('areaBasedList', areaCode, sigunguCode, contentTypeCode, el));
+    setPage(el);
+    const getTravelInfoFromSession = JSON.parse(sessionStorage.getItem('travelInfo'));
+    sessionStorage.setItem('travelInfo', JSON.stringify({ ...getTravelInfoFromSession, page: el }));
   };
 
   return (

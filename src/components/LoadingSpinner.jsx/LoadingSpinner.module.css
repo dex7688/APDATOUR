@@ -6,6 +6,7 @@
   bottom: 0;
   right: 0;
   left: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -15,15 +16,18 @@
 @keyframes arrows {
   0%,
   100% {
-    color: black;
+    background-color: black;
     transform: translateY(0);
   }
   50% {
-    color: #3ab493;
+    background-color: #3ab493;
     transform: translateY(20px);
   }
 }
 
 .loader {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
   animation: arrows 1s infinite ease-in;
 }

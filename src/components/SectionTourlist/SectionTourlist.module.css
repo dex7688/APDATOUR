@@ -29,17 +29,20 @@
   width: 100%;
   height: 350px;
   overflow: hidden;
+
+  display: flex;
+  align-items: center;
 }
 
 .itemWrapper {
-  width: 100%;
+  width: 1800%;
   display: flex;
   gap: calc(145px / 3);
 }
 
 .next {
   position: absolute;
-  top: 55%;
+  top: 52%;
   right: 5rem;
   transform: translateX(50%);
   background-color: white;
@@ -56,7 +59,7 @@
 
 .prev {
   position: absolute;
-  top: 55%;
+  top: 52%;
   left: 5rem;
   transform: translateX(-50%);
   background-color: white;
@@ -74,4 +77,53 @@
 .icons {
   font-size: 2rem;
   color: #333;
+}
+
+@media (max-width: 1400px) {
+  .slide {
+    width: calc(280px * 3 + (145px / 3) * 2);
+    align-self: center;
+  }
+
+  .prev {
+    left: calc((100vw - (280px * 3 + (145px / 3) * 2)) / 2 - 5px);
+  }
+
+  .next {
+    right: calc((100vw - (280px * 3 + (145px / 3) * 2)) / 2 - 5px);
+  }
+}
+
+@media (max-width: 1000px) {
+  .slide {
+    width: calc(280px * 2 + (145px / 3));
+    align-self: center;
+  }
+
+  .prev {
+    left: calc((100vw - (280px * 2 + (145px / 3))) / 2 - 5px);
+  }
+
+  .next {
+    right: calc((100vw - (280px * 2 + (145px / 3))) / 2 - 5px);
+  }
+}
+
+@media (max-width: 650px) {
+  .slide {
+    width: calc(280px + (145px / 3));
+    align-self: center;
+  }
+
+  .prev {
+    left: calc((100vw - (280px + (145px / 3))) / 2 + 15px);
+  }
+
+  .next {
+    right: calc((100vw - (280px + (145px / 3))) / 2 + 15px);
+  }
+
+  .itemWrapper {
+    padding-left: calc((145px / 3) / 2);
+  }
 }

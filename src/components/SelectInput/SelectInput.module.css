@@ -102,3 +102,16 @@
 .close {
   cursor: pointer;
 }
+
+@media (max-width: 1300px) {
+  .areaWrapper {
+    right: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .areaWrapper {
+    width: 400px;
+    height: 300px;
+  }
+}

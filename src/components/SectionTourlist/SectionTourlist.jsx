@@ -1,25 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './SectionTourlist.module.css';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
-import useFetchByArea from '../../hooks/useFetchByArea';
 import ItemCard from '../ItemCard/ItemCard';
 import SelectBox from '../SelectBox/SelectBox';
+import { useFetchTourListByArea } from '../../hooks/useFetchTourListByArea';
+import { useFetchAreaCode } from '../../hooks/useFetchAreaCode';
 
 export default function SectionTourlist() {
   const [currentArea, setCurrentArea] = useState('1');
-  const [areaCodes, setAreaCodes] = useState([]);
   const [slide, setSlide] = useState(4);
-  const [tourLists] = useFetchByArea(currentArea);
-
-  // areaCode(도시 코드,이름) fetch
-  useEffect(() => {
-    const fetchAreaCode = async () => {
-      const response = await fetch('data/areaCode.json');
-      const result = await response.json();
-      setAreaCodes(result.areaCodes);
-    };
-    fetchAreaCode();
-  }, []);
+  const { data: tourLists } = useFetchTourListByArea(currentArea);
+  const { data: areaCodes } = useFetchAreaCode();
 
   const handleOnChange = (areaCode) => {
     setCurrentArea(areaCode);
@@ -68,16 +59,15 @@ export default function SectionTourlist() {
       </div>
       <div className={styles.slide}>
         <div className={styles.itemWrapper} style={slideTransform()}>
-          {tourLists &&
-            tourListsLoop.map((tourList, index) => (
-              <ItemCard
-                key={index}
-                addr1={tourList.addr1}
-                firstimage={tourList.firstimage}
-                title={tourList.title}
-                contentid={tourList.contentid}
-              />
-            ))}
+          {tourListsLoop?.map((tourList, index) => (
+            <ItemCard
+              key={index}
+              addr1={tourList.addr1}
+              firstimage={tourList.firstimage}
+              title={tourList.title}
+              contentid={tourList.contentid}
+            />
+          ))}
         </div>
       </div>
       <span className={styles.prev} onClick={handlePrevClick}>

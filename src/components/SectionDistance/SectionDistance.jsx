@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import styles from './SectionDistance.module.css';
-import useGeolocation from '../useGeolocation';
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from 'react-icons/md';
-import { useNavigate } from 'react-router-dom';
+import { useFetchTourListByDistance } from '../../hooks/useFetchTourListByDistance';
+import ItemCard from '../ItemCard/ItemCard';
 
 export default function SectionDistance() {
   const [slide, setSlide] = useState(0);
-  const [distanceData, loading, error] = useGeolocation();
-  const navigate = useNavigate();
+  const { data: distanceData } = useFetchTourListByDistance();
 
   const getCarouselStyle = () => {
     return {
@@ -34,28 +33,23 @@ export default function SectionDistance() {
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>내 주변 관광지 보기</h2>
+      <h2 className={styles.title}>주변 관광지</h2>
       <div className={styles.itemWrapper}>
-        <div className={styles.itemImage}></div>
+        <div className={styles.itemImage} />
         <div className={styles.itemSlides}>
           <div className={styles.carousel} style={getCarouselStyle()}>
-            {loading && <div className={styles.loading}>l</div>}
-            {distanceData &&
-              distanceData.map((el) => (
-                <div className={styles.item} key={el.title}>
-                  <img className={styles.img} src={el.firstimage || 'images/gray.jpg'} alt={el.title} />
-                  <div>
-                    <div className={styles.title}>{el.title}</div>
-                    <div className={styles.addr}>
-                      주소
-                      <br />
-                      {el.addr1}
-                    </div>
-                    <div className={styles.dist}>거리 {parseInt(el.dist, 10)}m</div>
-                  </div>
-                </div>
-              ))}
+            {distanceData?.map((tourList, index) => (
+              <ItemCard
+                key={index}
+                addr1={tourList.addr1}
+                firstimage={tourList.firstimage}
+                title={tourList.title}
+                contentid={tourList.contentid}
+                dist={parseInt(tourList.dist, 10)}
+              />
+            ))}
           </div>
+
           {distanceData && slide !== distanceData.length - 3 && (
             <span className={styles.next} onClick={handleNextClick}>
               <MdKeyboardArrowRight className={styles.icons} />

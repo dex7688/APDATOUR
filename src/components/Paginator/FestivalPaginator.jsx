@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
 import styles from './Paginator.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchFestival } from '../../store/modules/fetchFestival';
 import { FcNext, FcPrevious } from 'react-icons/fc';
 
-export default function FestivalPaginator({ totalCount, pageNo, date }) {
-  const { areaCode, sigunguCode } = useSelector((state) => state.searchInfo);
+export default function FestivalPaginator({ totalCount, pageNo, setPage, refetch }) {
   const [pageIndex, setPageIndex] = useState(0);
-  const dispatch = useDispatch();
 
   // 필요한 총 페이지 수
   const numOfPages = Math.ceil(Number(totalCount) / 8);
@@ -31,7 +27,13 @@ export default function FestivalPaginator({ totalCount, pageNo, date }) {
   };
 
   const handleClick = (el) => {
-    dispatch(fetchFestival('searchFestival', areaCode, sigunguCode, date, el));
+    const getFestivalInfoFromSession = JSON.parse(sessionStorage.getItem('festivalInfo'));
+
+    if (getFestivalInfoFromSession) {
+      sessionStorage.setItem('festivalInfo', JSON.stringify({ ...getFestivalInfoFromSession, page: el }));
+    }
+
+    setPage(el);
   };
 
   return (

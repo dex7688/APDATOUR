@@ -8,7 +8,10 @@ export default function SignUp() {
   const passwordInput = useRef();
   const regionInput = useRef();
   const navigate = useNavigate();
-  const HTTPS = 'https://api.tourapda.com';
+  // HTTPS
+  // const HTTPS = 'https://api.tourapda.com';
+  // LOCAL
+  const HTTPS = 'http://localhost:4500';
 
   async function register() {
     const registerInfo = {
@@ -96,7 +99,7 @@ export default function SignUp() {
               <option value='충북'>충북</option>
             </select>
           </li>
-          <li>
+          <li className={styles.btnWrapper}>
             <button
               className={styles.signup_btn}
               onClick={() => {

@@ -8,7 +8,10 @@ export default function Login() {
   const KAKAO_CLIENT_ID = '71fc8b830aac0622e9954140782b4cf4';
   const KAKAO_REDIRECT_URI = 'http://13.209.203.105:3000/oauth/callback/kakao';
   const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code`;
-  const HTTPS = 'https://api.tourapda.com';
+  // HTTPS
+  // const HTTPS = 'https://api.tourapda.com';
+  // LOCAL
+  const HTTPS = 'http://localhost:4500';
 
   const userEmailInput = useRef();
   const userPasswordInput = useRef();
@@ -23,6 +26,7 @@ export default function Login() {
     if (loginInfo.email !== '' && loginInfo.password !== '') {
       const loginResponse = await fetch(`${HTTPS}/login`, {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -59,7 +63,7 @@ export default function Login() {
                 className={styles.login_inputbox1}
                 type='email'
                 placeholder='아이디(이메일 계정)'
-              ></input>
+              />
             </li>
             <li>
               <input
@@ -67,7 +71,7 @@ export default function Login() {
                 className={styles.login_inputbox2}
                 type='password'
                 placeholder='비밀번호를 입력하세요'
-              ></input>
+              />
             </li>
           </ul>
           <button className={styles.login_btn} onClick={() => loginUser()}>

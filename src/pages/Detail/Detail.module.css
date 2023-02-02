@@ -1,11 +1,12 @@
 .container {
   position: relative;
   width: 100%;
+  min-height: 100vh;
   padding: var(--padding-layout);
   color: var(--color-text);
 }
 .sectionTitle {
-  width: 80%;
+  max-width: 800px;
   font-size: 1.8rem;
   padding: 4px;
   margin: 0 auto;
@@ -21,7 +22,7 @@
 }
 
 .imageWrapper {
-  width: 80%;
+  max-width: 800px;
   height: 600px;
   overflow: hidden;
   padding: 10px;
@@ -37,7 +38,7 @@
 
 .timeLine {
   position: relative;
-  width: 80%;
+  max-width: 800px;
   margin-left: 30px;
   padding-left: 64px;
 }
@@ -263,4 +264,15 @@ a {
 
 .timeLineLikebtn {
   cursor: pointer;
+}
+
+@media (max-width: 670px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .timeLinebody,
+  .timeLineMapbody {
+    width: 380px;
+  }
 }

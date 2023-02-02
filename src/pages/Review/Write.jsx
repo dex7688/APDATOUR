@@ -8,10 +8,12 @@ export default function Write() {
   const itemInput = useRef();
   const titleInput = useRef();
   let textareaInput = '';
-  const navigate = useNavigate();
-
+  const navigate = useNavigate();     
   const userEmail = useSelector((state) => state.user.userEmail);
-  const HTTPS = 'https://api.tourapda.com';
+  // HTTPS
+  // const HTTPS = 'https://api.tourapda.com';
+  // LOCAL
+  const HTTPS = 'http://localhost:4500'
 
   function onEditorChange(value) {
     textareaInput = value;

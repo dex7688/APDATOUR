@@ -6,9 +6,11 @@ import styles from './Review.module.css';
 export default function Review() {
   const [reviews, setReviews] = useState([]);
   const navigate = useNavigate();
-
   const isLogin = useSelector((state) => state.user.isLogin);
-  const HTTPS = 'https://api.tourapda.com';
+  // HTTPS
+  // const HTTPS = 'https://api.tourapda.com';
+  // LOCAL
+  const HTTPS = 'http://localhost:4500'
 
   useEffect(() => {
     fetchAllReview();

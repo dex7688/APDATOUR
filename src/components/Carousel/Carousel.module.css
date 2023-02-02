@@ -55,3 +55,8 @@
   font-size: 1.6rem;
   cursor: pointer;
 }
+
+@media (max-width: 1300px) {
+  .carouselItem {
+  }
+}

@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import styles from './Paginator.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchAccommodation } from '../../store/modules/fetchAccommodation';
 import { FcNext, FcPrevious } from 'react-icons/fc';
 
-export default function AccommodationPaginator({ totalCount, pageNo }) {
-  const { areaCode, sigunguCode } = useSelector((state) => state.searchInfo);
+export default function AccommodationPaginator({ totalCount, pageNo, setPage }) {
   const [pageIndex, setPageIndex] = useState(0);
-  const dispatch = useDispatch();
 
   // 필요한 총 페이지 수
   const numOfPages = Math.ceil(Number(totalCount) / 8);
@@ -31,7 +28,9 @@ export default function AccommodationPaginator({ totalCount, pageNo }) {
   };
 
   const handleClick = (el) => {
-    dispatch(fetchAccommodation('searchStay', areaCode, sigunguCode, el));
+    setPage(el);
+    const getStayInfoFromSession = JSON.parse(sessionStorage.getItem('stayInfo'));
+    sessionStorage.setItem('stayInfo', JSON.stringify({ ...getStayInfoFromSession, page: el }));
   };
 
   return (

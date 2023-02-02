@@ -1,7 +1,7 @@
 .itemCard {
   width: 280px;
   height: 310px;
-  flex-shrink: 0;
+  /* flex-shrink: 0; */
   display: flex;
   flex-direction: column;
   box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
@@ -26,6 +26,9 @@
 .itemTitle {
   width: 100%;
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .itemAddr {

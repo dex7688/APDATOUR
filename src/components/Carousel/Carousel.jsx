@@ -9,7 +9,7 @@ export default function Carousel({ sectionRef }) {
   useEffect(() => {
     const interval = setInterval(() => {
       setSlide((prev) => prev + 1);
-    }, 3500);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -31,7 +31,7 @@ export default function Carousel({ sectionRef }) {
   return (
     <>
       <div className={styles.carouselWrapper}>
-        <div className={styles.carouselItem} ref={carouselRef}></div>
+        <div className={styles.carouselItem} ref={carouselRef} />
       </div>
       <div className={styles.iconWrapper}>
         <span className={styles.prev} onClick={handlePrevClick}>
@@ -48,38 +48,32 @@ export default function Carousel({ sectionRef }) {
 const backgroundInfo = [
   {
     section: '#7fd1ae',
-    carousel: "url('images/carouselReview.jpeg')",
-    text: '리뷰쓰고<br/>숙박권 받자',
+    carousel: 'url(images/carouselReview.jpeg)',
     color: '#303030',
   },
   {
     section: '#b0edf6',
     carousel: "url('images/carouselTravel.jpeg')",
-    text: '행복한 여행<br/>함께 준비해요',
     color: '#FFFFFF',
   },
   {
     section: '#ACA7CB',
     carousel: "url('images/carouselFestival.jpeg')",
-    text: '다양한 축제<br/>한눈에 보기',
     color: '#FFFFFF',
   },
   {
     section: '#f8dec3',
     carousel: "url('images/carouselAccommodation.jpeg')",
-    text: '1년 365일<br/>숙박 체크',
     color: '#303030',
   },
   {
     section: '#7fd1ae',
     carousel: "url('images/carouselReview.jpeg')",
-    text: '리뷰쓰고<br/>숙박권 받자',
     color: '#303030',
   },
   {
     section: '#b0edf6',
     carousel: "url('images/carouselTravel.jpeg')",
-    text: '행복한 여행<br/>함께 준비해요',
     color: '#FFFFFF',
   },
 ];

@@ -1,75 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import styles from './Detail.module.css';
 import { useLocation } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchDetailInfo } from '../../store/modules/fetchDetailInfo';
+import { useSelector } from 'react-redux';
 import Kakao from '../../components/Kakao';
 import LoadingSpinner from '../../components/LoadingSpinner.jsx/LoadingSpinner';
 import { TfiBook, TfiLocationPin, TfiThumbUp } from 'react-icons/tfi';
+import { useFetchDetail, useCheckLike, useAddLike } from '../../hooks/useFetchDetail';
 
 export default function Detail() {
-  const HTTPS = 'https://api.tourapda.com';
-
-  const { infoData, infoLoading } = useSelector((state) => state.fetchDetailInfo);
-  const { userEmail } = useSelector((state) => state.user);
-  const { isLogin } = useSelector((state) => state.user);
+  const { userEmail, isLogin } = useSelector((state) => state.user);
   const { state } = useLocation();
-  const dispatch = useDispatch();
-  console.log(state);
-
-  useEffect(() => {
-    dispatch(fetchDetailInfo(state.contentId));
-  }, [state.contentId]);
-
+  const { data: infoData, isFetching: infoLoading } = useFetchDetail(state?.contentId);
   const [subscribe, setSubscribe] = useState();
+  const { mutateAsync } = useCheckLike();
+  const { mutateAsync: addLike } = useAddLike();
 
   useEffect(() => {
-    const fetchIsCheck = async () => {
+    const getLikeState = async () => {
       const loginInfo = { email: userEmail, contentId: state.contentId };
-      const loginResponse = await fetch(`${HTTPS}/addLike/isCheck`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(loginInfo),
-      });
-
-      if (loginResponse.status === 200) {
-        const result = await loginResponse.json();
-        console.log(result.msg);
-        setSubscribe(result.msg);
-      }
+      const response = await mutateAsync(loginInfo);
+      const result = await response.data.msg;
+      setSubscribe(result);
     };
 
     if (isLogin) {
-      fetchIsCheck();
+      getLikeState();
     }
-  }, []);
+  }, [isLogin]);
 
   const fetchLike = async () => {
     const loginInfo = { email: userEmail, contentId: state.contentId };
-    const loginResponse = await fetch(`${HTTPS}/addLike`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(loginInfo),
-    });
-
-    if (loginResponse.status === 200) {
-      const result = await loginResponse.json();
-      setSubscribe(result.msg);
-    }
+    const response = await addLike(loginInfo);
+    const result = await response.data.msg;
+    setSubscribe(result);
   };
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.sectionTitle}>{infoData[0]?.title}</h2>
+      <h2 className={styles.sectionTitle}>{infoData && infoData[0].title}</h2>
       {infoLoading && <LoadingSpinner />}
       {infoData?.map((data) => (
         <div className={styles.detailWrapper} key={data.contentid}>
           <div className={styles.imageWrapper}>
-            <img className={styles.image} src={data.firstimage || 'images/gray.jpg'} alt={data.title} />
+            <img className={styles.image} src={data.firstimage || '/images/gray.jpg'} alt={data.title} />
           </div>
 
           <div className={styles.timeLine}>
@@ -123,15 +96,14 @@ export default function Detail() {
               </div>
               <div className={styles.timeLineLikebody}>
                 <div className={styles.timeLineLikeTitle}>
-                  {isLogin ? (
-                    <h4 className={styles.timeLineLikebtn} onClick={() => fetchLike()}>
-                      {subscribe}
-                    </h4>
-                  ) : (
-                    <h4 className={styles.timeLineLikebtn} onClick={() => alert('로그인을 해주세요!')}>
-                      구독하기
-                    </h4>
-                  )}
+                  <h4
+                    className={styles.timeLineLikebtn}
+                    onClick={() => {
+                      isLogin ? fetchLike() : alert('로그인을 해주세요!');
+                    }}
+                  >
+                    {isLogin ? subscribe : '구독하기'}
+                  </h4>
                 </div>
               </div>
             </div>

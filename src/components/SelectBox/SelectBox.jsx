@@ -18,7 +18,7 @@ export default function SelectBox({ items, label, labelId, selectId, handleOnCha
           label={label}
           onChange={(e) => handleOnChange(e.target.value)}
         >
-          {items.map((item) => (
+          {items?.map((item) => (
             <MenuItem value={item.code} key={item.name}>
               {item.name}
             </MenuItem>
