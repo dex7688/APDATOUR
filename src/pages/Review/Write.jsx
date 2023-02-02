@@ -8,12 +8,12 @@ export default function Write() {
   const itemInput = useRef();
   const titleInput = useRef();
   let textareaInput = '';
-  const navigate = useNavigate();     
+  const navigate = useNavigate();
   const userEmail = useSelector((state) => state.user.userEmail);
   // HTTPS
   // const HTTPS = 'https://api.tourapda.com';
   // LOCAL
-  const HTTPS = 'http://localhost:4500'
+  const HTTPS = 'http://localhost:4500';
 
   function onEditorChange(value) {
     textareaInput = value;
@@ -29,6 +29,7 @@ export default function Write() {
     if (postInfo.item !== '' && postInfo.title !== '' && postInfo.content) {
       const postResponse = await fetch(`${HTTPS}/review/write`, {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },

@@ -18,7 +18,7 @@ export default function ReviewDetail() {
   // HTTPS
   // const HTTPS = 'https://api.tourapda.com';
   // LOCAL
-  const HTTPS = 'http://localhost:4500'
+  const HTTPS = 'http://localhost:4500';
 
   const deleteComment = async (author, comment) => {
     const deleteCommentResponse = await fetch(`${HTTPS}/review/comment/delete/${reviewNo}`, {
@@ -26,6 +26,7 @@ export default function ReviewDetail() {
       headers: {
         'Content-Type': 'application/json',
       },
+      credentials: 'include',
       body: JSON.stringify({
         author: author,
         comment: comment,
@@ -46,6 +47,7 @@ export default function ReviewDetail() {
       headers: {
         'Content-Type': 'application/json',
       },
+      credentials: 'include',
       body: JSON.stringify({
         author: userEmail,
         comment: commentInput.current.value,
@@ -63,7 +65,13 @@ export default function ReviewDetail() {
   };
 
   async function fetchReview() {
-    const reviewRes = await fetch(`${HTTPS}/review/${reviewNo}`);
+    const reviewRes = await fetch(`${HTTPS}/review/${reviewNo}`, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
     if (reviewRes.status === 200) {
       const data = await reviewRes.json();
       setReview(data);
@@ -73,6 +81,7 @@ export default function ReviewDetail() {
   async function addLike() {
     const likeRes = await fetch(`${HTTPS}/review/addLike/${reviewNo}`, {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -89,6 +98,7 @@ export default function ReviewDetail() {
   async function addCount() {
     const countRes = await fetch(`${HTTPS}/review/addCount/${reviewNo}`, {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -104,6 +114,7 @@ export default function ReviewDetail() {
   const deleteReview = async () => {
     const deleteReviewResponse = await fetch(`${HTTPS}/review/delete/${reviewNo}`, {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },

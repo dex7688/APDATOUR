@@ -9,9 +9,9 @@ export default function Login() {
   const KAKAO_REDIRECT_URI = 'http://13.209.203.105:3000/oauth/callback/kakao';
   const KAKAO_AUTH_URL = `https://kauth.kakao.com/oauth/authorize?client_id=${KAKAO_CLIENT_ID}&redirect_uri=${KAKAO_REDIRECT_URI}&response_type=code`;
   // HTTPS
-  // const HTTPS = 'https://api.tourapda.com';
+  const HTTPS = 'https://api.tourapda.com';
   // LOCAL
-  const HTTPS = 'http://localhost:4500';
+  // const HTTPS = 'http://localhost:4500';
 
   const userEmailInput = useRef();
   const userPasswordInput = useRef();

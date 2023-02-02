@@ -12,16 +12,22 @@ export default function Modify() {
   const navigate = useNavigate();
   const [content, setContent] = useState('');
   // HTTPS
-  // const HTTPS = 'https://api.tourapda.com';
+  const HTTPS = 'https://api.tourapda.com';
   // LOCAL
-  const HTTPS = 'http://localhost:4500'
+  // const HTTPS = 'http://localhost:4500'
 
   useEffect(() => {
     fetchReview();
   }, []);
 
   async function fetchReview() {
-    const reviewRes = await fetch(`${HTTPS}/review/${reviewNo}`);
+    const reviewRes = await fetch(`${HTTPS}/review/${reviewNo}`, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
     if (reviewRes.status === 200) {
       const data = await reviewRes.json();
       itemInput.current.value = data.item;
@@ -49,6 +55,7 @@ export default function Modify() {
     if (modifyInfo.item !== '' && modifyInfo.title !== '' && modifyInfo.content) {
       const postResponse = await fetch(`${HTTPS}/review/modify/${reviewNo}`, {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },

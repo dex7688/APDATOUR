@@ -8,27 +8,34 @@ export default function Review() {
   const navigate = useNavigate();
   const isLogin = useSelector((state) => state.user.isLogin);
   // HTTPS
-  // const HTTPS = 'https://api.tourapda.com';
+  const HTTPS = 'https://api.tourapda.com';
   // LOCAL
-  const HTTPS = 'http://localhost:4500'
+  // const HTTPS = 'http://localhost:4500';
 
   useEffect(() => {
     fetchAllReview();
   }, []);
 
   async function fetchAllReview() {
-    const reviewRes = await fetch(`${HTTPS}/review/getAll`);
+    const reviewRes = await fetch(`${HTTPS}/review/getAll`, {
+      method: 'GET',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
     if (reviewRes.status === 200) {
       const data = await reviewRes.json();
-
       setReviews(data);
     }
   }
   const { reviewNo } = useParams();
   const [count, setCount] = useState(0);
+
   async function addCounts() {
     const countRes = await fetch(`${HTTPS}/review/addCounts/${reviewNo}`, {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },

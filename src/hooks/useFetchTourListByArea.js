@@ -4,13 +4,15 @@ import axios from 'axios';
 
 const fetchTourListByArea = (areaCode) => {
   return axios.get(
-    `http://apis.data.go.kr/B551011/KorService/areaBasedList?serviceKey=${process.env.REACT_APP_TOUR_KEY}&pageNo=1&numOfRows=10&MobileApp=AppTest&MobileOS=ETC&arrange=O&areaCode=${areaCode}&_type=json`
+    `http://apis.data.go.kr/B551011/KorService/areaBasedList?serviceKey=${process.env.REACT_APP_TOUR_KEY}&pageNo=1&numOfRows=10&MobileApp=AppTest&MobileOS=ETC&arrange=O&areaCode=${areaCode}&_type=json`,
+    { withCredentials: true }
   );
 };
 
 export const fetchTourListBySigungu = (areaCode, sigunguCode, contentType, pageNo) => {
   return axios.get(
-    `http://apis.data.go.kr/B551011/KorService/areaBasedList?serviceKey=${process.env.REACT_APP_TOUR_KEY}&pageNo=${pageNo}&numOfRows=8&MobileApp=AppTest&MobileOS=ETC&arrange=O&areaCode=${areaCode}&sigunguCode=${sigunguCode}&_type=json&contentTypeId=${contentType}`
+    `http://apis.data.go.kr/B551011/KorService/areaBasedList?serviceKey=${process.env.REACT_APP_TOUR_KEY}&pageNo=${pageNo}&numOfRows=8&MobileApp=AppTest&MobileOS=ETC&arrange=O&areaCode=${areaCode}&sigunguCode=${sigunguCode}&_type=json&contentTypeId=${contentType}`,
+    { withCredentials: true }
   );
 };
 

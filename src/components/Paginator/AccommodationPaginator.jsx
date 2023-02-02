@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import styles from './Paginator.module.css';
-import { useDispatch, useSelector } from 'react-redux';
 import { FcNext, FcPrevious } from 'react-icons/fc';
 
 export default function AccommodationPaginator({ totalCount, pageNo, setPage }) {

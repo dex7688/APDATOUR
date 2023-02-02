@@ -9,9 +9,9 @@ export default function SignUp() {
   const regionInput = useRef();
   const navigate = useNavigate();
   // HTTPS
-  // const HTTPS = 'https://api.tourapda.com';
+  const HTTPS = 'https://api.tourapda.com';
   // LOCAL
-  const HTTPS = 'http://localhost:4500';
+  // const HTTPS = 'http://localhost:4500';
 
   async function register() {
     const registerInfo = {
@@ -24,6 +24,7 @@ export default function SignUp() {
     if (registerInfo.name !== '' && registerInfo.email !== '' && registerInfo.password !== '' && registerInfo.region) {
       const registerResponse = await fetch(`${HTTPS}/register`, {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
         },

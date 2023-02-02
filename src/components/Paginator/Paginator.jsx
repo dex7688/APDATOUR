@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styles from './Paginator.module.css';
 import { FcNext, FcPrevious } from 'react-icons/fc';
-import { useLocation } from 'react-router-dom';
 
 export default function Paginator({ totalCount, pageNo, setPage }) {
   const [pageIndex, setPageIndex] = useState(0);

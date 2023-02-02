@@ -4,7 +4,8 @@ import axios from 'axios';
 
 const fetchTourListByDistance = (longitude, latitude) => {
   return axios.get(
-    `http://apis.data.go.kr/B551011/KorService/locationBasedList?serviceKey=${process.env.REACT_APP_TOUR_KEY}&numOfRows=15&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=S&mapX=${longitude}&mapY=${latitude}&radius=2000&listYN=Y&_type=json`
+    `http://apis.data.go.kr/B551011/KorService/locationBasedList?serviceKey=${process.env.REACT_APP_TOUR_KEY}&numOfRows=15&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=S&mapX=${longitude}&mapY=${latitude}&radius=2000&listYN=Y&_type=json`,
+    { withCredentials: true }
   );
 };
 

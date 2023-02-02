@@ -14,8 +14,10 @@ export default function Header() {
   const [user, setUser] = useState();
   const [show, setShow] = useState(false);
 
+  const HTTPS = 'https://api.tourapda.com';
+
   useEffect(() => {
-    axios.get('http://localhost:4500/login/check', { withCredentials: true }).then((data) => {
+    axios.get(`${HTTPS}/login/check`, { withCredentials: true }).then((data) => {
       if (data.data.cookie) {
         dispatch(login({ email: data.data.cookie }));
       }
@@ -25,7 +27,7 @@ export default function Header() {
   useEffect(() => setUser(isLogin), [isLogin]);
 
   const handleLogoutClick = () => {
-    axios.get('http://localhost:4500/logout', { withCredentials: true });
+    axios.get(`${HTTPS}/logout`, { withCredentials: true });
     setUser('');
     dispatch(logout());
   };

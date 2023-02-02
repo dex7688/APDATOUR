@@ -18,37 +18,10 @@ import Modify from './pages/Review/Modify';
 import Footer from './components/Footer/Footer';
 import { QueryClientProvider, QueryClient } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
-import { login } from './store/modules/users';
 
 const queryClient = new QueryClient();
 
 function App() {
-  // const [user, setUser] = useState();
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   axios.get('http://localhost:4500/login/check', { withCredentials: true }).then((data) => setUser(data.data.cookie));
-  // }, []);
-
-  // useEffect(() => {
-  //   if (user) {
-  //     dispatch(login({ email: user }));
-  //   }
-  // }, [user]);
-
-  // const data = useSelector((select) => select.user);
-  // const dispatch = useDispatch();
-
-  // useEffect(() => {
-  //   axios.get('http://localhost:4500/login/check', { withCredentials: true }).then((data) => {
-  //     if (data.data.cookie) {
-  //       dispatch(login({ email: data.data.cookie }));
-  //     }
-  //   });
-  // }, [dispatch, data]);
-
   return (
     <QueryClientProvider client={queryClient}>
       <Header />
