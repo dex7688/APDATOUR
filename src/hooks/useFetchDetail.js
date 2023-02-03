@@ -3,17 +3,16 @@ import axios from 'axios';
 
 const fetchDetail = (contentId) => {
   return axios.get(
-    `http://apis.data.go.kr/B551011/KorService/detailCommon?defaultYN=Y&serviceKey=${process.env.REACT_APP_TOUR_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&contentId=${contentId}&_type=json&firstImageYN=Y&addrinfoYN=Y&overviewYN=Y&mapinfoYN=Y`,
-    { withCredentials: true }
+    `http://apis.data.go.kr/B551011/KorService/detailCommon?defaultYN=Y&serviceKey=${process.env.REACT_APP_TOUR_KEY}&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&contentId=${contentId}&_type=json&firstImageYN=Y&addrinfoYN=Y&overviewYN=Y&mapinfoYN=Y`
   );
 };
 
 const checkLike = (userInfo) => {
-  return axios.post(`http://localhost:4500/addLike/isCheck`, userInfo, { withCredentials: true });
+  return axios.post(`https://api.tourapda.com/addLike/isCheck`, userInfo, { withCredentials: true });
 };
 
 const addLike = (info) => {
-  return axios.post(`http://localhost:4500/addLike`, info, { withCredentials: true });
+  return axios.post(`https://api.tourapda.com/addLike`, info, { withCredentials: true });
 };
 
 export const useFetchDetail = (contentId) => {

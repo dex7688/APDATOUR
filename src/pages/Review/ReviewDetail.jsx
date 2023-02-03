@@ -25,6 +25,7 @@ export default function ReviewDetail() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
       },
       credentials: 'include',
       body: JSON.stringify({
@@ -46,6 +47,7 @@ export default function ReviewDetail() {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
       },
       credentials: 'include',
       body: JSON.stringify({
@@ -70,6 +72,7 @@ export default function ReviewDetail() {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
       },
     });
     if (reviewRes.status === 200) {
@@ -84,6 +87,7 @@ export default function ReviewDetail() {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
       },
     });
     if (likeRes.status === 200) {
@@ -101,6 +105,7 @@ export default function ReviewDetail() {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
       },
     });
     if (countRes.status === 200) {
@@ -117,6 +122,7 @@ export default function ReviewDetail() {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
       },
     });
     if (deleteReviewResponse.status === 200) {

@@ -27,6 +27,7 @@ export default function SignUp() {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
+          'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
         },
         body: JSON.stringify(registerInfo),
       });

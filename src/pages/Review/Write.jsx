@@ -11,9 +11,9 @@ export default function Write() {
   const navigate = useNavigate();
   const userEmail = useSelector((state) => state.user.userEmail);
   // HTTPS
-  // const HTTPS = 'https://api.tourapda.com';
+  const HTTPS = 'https://api.tourapda.com';
   // LOCAL
-  const HTTPS = 'http://localhost:4500';
+  // const HTTPS = 'http://localhost:4500';
 
   function onEditorChange(value) {
     textareaInput = value;
@@ -32,6 +32,7 @@ export default function Write() {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
+          'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
         },
         body: JSON.stringify(postInfo),
       });

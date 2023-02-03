@@ -22,6 +22,7 @@ export default function Review() {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
       },
     });
     if (reviewRes.status === 200) {
@@ -38,6 +39,7 @@ export default function Review() {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
       },
     });
     if (countRes.status === 200) {

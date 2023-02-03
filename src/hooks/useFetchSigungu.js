@@ -3,8 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 
 const fetchSigungu = (areaCode) => {
   return axios.get(
-    `http://apis.data.go.kr/B551011/KorService/areaCode?pageNo=1&MobileOS=ETC&MobileApp=AppTest&serviceKey=${process.env.REACT_APP_TOUR_KEY}&areaCode=${areaCode}&numOfRows=100&_type=json`,
-    { withCredentials: true }
+    `http://apis.data.go.kr/B551011/KorService/areaCode?pageNo=1&MobileOS=ETC&MobileApp=AppTest&serviceKey=${process.env.REACT_APP_TOUR_KEY}&areaCode=${areaCode}&numOfRows=100&_type=json`
   );
 };
 

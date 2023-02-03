@@ -2,7 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 
 const fetchAreaCode = () => {
-  return axios.get('data/areaCode.json', { withCredentials: true });
+  return axios.get('data/areaCode.json');
 };
 
 export const useFetchAreaCode = () => {
