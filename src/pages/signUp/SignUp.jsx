@@ -9,7 +9,7 @@ export default function SignUp() {
   const regionInput = useRef();
   const navigate = useNavigate();
   // HTTPS
-  const HTTPS = 'https://api.tourapda.com';
+  const HTTPS = 'https://www.tourapda.com/api';
   // LOCAL
   // const HTTPS = 'http://localhost:4500';
 

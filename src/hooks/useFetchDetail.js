@@ -8,11 +8,11 @@ const fetchDetail = (contentId) => {
 };
 
 const checkLike = (userInfo) => {
-  return axios.post(`https://api.tourapda.com/addLike/isCheck`, userInfo, { withCredentials: true });
+  return axios.post(`https://www.tourapda.com/api/addLike/isCheck`, userInfo, { withCredentials: true });
 };
 
 const addLike = (info) => {
-  return axios.post(`https://api.tourapda.com/addLike`, info, { withCredentials: true });
+  return axios.post(`https://www.tourapda.com/api/addLike`, info, { withCredentials: true });
 };
 
 export const useFetchDetail = (contentId) => {

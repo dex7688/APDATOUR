@@ -11,7 +11,7 @@ export default function Write() {
   const navigate = useNavigate();
   const userEmail = useSelector((state) => state.user.userEmail);
   // HTTPS
-  const HTTPS = 'https://api.tourapda.com';
+  const HTTPS = 'https://www.tourapda.com/api';
   // LOCAL
   // const HTTPS = 'http://localhost:4500';
 

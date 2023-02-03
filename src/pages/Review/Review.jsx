@@ -8,7 +8,7 @@ export default function Review() {
   const navigate = useNavigate();
   const isLogin = useSelector((state) => state.user.isLogin);
   // HTTPS
-  const HTTPS = 'https://api.tourapda.com';
+  const HTTPS = 'https://www.tourapda.com/api';
   // LOCAL
   // const HTTPS = 'http://localhost:4500';
 

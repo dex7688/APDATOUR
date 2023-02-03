@@ -12,7 +12,7 @@ export default function Modify() {
   const navigate = useNavigate();
   const [content, setContent] = useState('');
   // HTTPS
-  const HTTPS = 'https://api.tourapda.com';
+  const HTTPS = 'https://www.tourapda.com/api';
   // LOCAL
   // const HTTPS = 'http://localhost:4500'
 
