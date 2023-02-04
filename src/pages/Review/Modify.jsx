@@ -12,7 +12,7 @@ export default function Modify() {
   const navigate = useNavigate();
   const [content, setContent] = useState('');
   // HTTPS
-  const HTTPS = 'https://www.tourapda.com/api';
+  const HTTPS = 'https://api.tourapda.com';
   // LOCAL
   // const HTTPS = 'http://localhost:4500'
 
@@ -26,7 +26,6 @@ export default function Modify() {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
       },
     });
     if (reviewRes.status === 200) {
@@ -59,7 +58,6 @@ export default function Modify() {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
         },
         body: JSON.stringify(modifyInfo),
       });

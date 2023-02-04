@@ -14,7 +14,7 @@ export default function Header() {
   const [user, setUser] = useState();
   const [show, setShow] = useState(false);
 
-  const HTTPS = 'https://www.tourapda.com/api';
+  const HTTPS = 'https://api.tourapda.com';
 
   useEffect(() => {
     axios.get(`${HTTPS}/login/check`, { withCredentials: true }).then((data) => {

@@ -29,7 +29,6 @@ export default function Login() {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
         },
 
         body: JSON.stringify(loginInfo),

@@ -9,7 +9,7 @@ export default function SignUp() {
   const regionInput = useRef();
   const navigate = useNavigate();
   // HTTPS
-  const HTTPS = 'https://www.tourapda.com/api';
+  const HTTPS = 'https://api.tourapda.com';
   // LOCAL
   // const HTTPS = 'http://localhost:4500';
 
@@ -27,7 +27,6 @@ export default function SignUp() {
         credentials: 'include',
         headers: {
           'Content-Type': 'application/json',
-          'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
         },
         body: JSON.stringify(registerInfo),
       });

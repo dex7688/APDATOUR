@@ -8,7 +8,7 @@ export default function Review() {
   const navigate = useNavigate();
   const isLogin = useSelector((state) => state.user.isLogin);
   // HTTPS
-  const HTTPS = 'https://www.tourapda.com/api';
+  const HTTPS = 'https://api.tourapda.com';
   // LOCAL
   // const HTTPS = 'http://localhost:4500';
 
@@ -22,7 +22,6 @@ export default function Review() {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
       },
     });
     if (reviewRes.status === 200) {
@@ -39,7 +38,6 @@ export default function Review() {
       credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
-        'Access-Conttrol-Allow-Origin': 'https://www.tourapda.com',
       },
     });
     if (countRes.status === 200) {

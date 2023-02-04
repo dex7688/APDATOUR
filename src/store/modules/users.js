@@ -41,3 +41,6 @@ export default function userReducer(state = initState, action) {
       return state;
   }
 }
+
+// api.tourapda.com - back
+// www.tourapda.com - front
