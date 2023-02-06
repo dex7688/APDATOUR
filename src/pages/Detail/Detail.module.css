@@ -19,6 +19,7 @@
   flex-direction: column;
   gap: 40px;
   align-items: center;
+  padding-bottom: 40px;
 }
 
 .imageWrapper {
