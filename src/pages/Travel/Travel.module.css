@@ -9,6 +9,7 @@
   flex-direction: column;
   gap: 30px;
   align-items: center;
+  padding-bottom: 50px;
 }
 
 .sectionTitle {
@@ -78,6 +79,7 @@
 @media (max-width: 600px) {
   .container {
     padding: 0 20px;
+    padding-bottom: 50px;
   }
 
   .boxWrapper {
